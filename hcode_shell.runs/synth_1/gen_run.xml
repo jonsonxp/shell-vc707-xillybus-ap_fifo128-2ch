@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7vx485tffg1761-2" LaunchTime="1489041288">
+  <File Type="VDS-TIMING-PB" Name="hcode_shell_top_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="hcode_shell_top_timing_summary_synth.rpt"/>
+  <File Type="RDS-RDS" Name="hcode_shell_top.vds"/>
+  <File Type="PA-TCL" Name="hcode_shell_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="hcode_shell_top_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="hcode_shell_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="hcode_shell_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="hcode_shell_top.dcp"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/shell-src/hcode_shell_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/shell-src/xillybus/pcie_k7_8x.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/shell-src/xillybus/pcie_k7_8x_pipe_clock.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/shell-src/xillybus/pcie_k7_vivado_pipe_clock.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/shell-src/xillybus_interface.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/core/fifo_8x2048/fifo_8x2048.upgrade_log"/>
+    <File Path="$PPRDIR/core/pcie_k7_vivado/pcie_k7_vivado.upgrade_log"/>
+    <File Path="$PPRDIR/core/clk_wiz_0/clk_wiz_0.upgrade_log"/>
+    <File Path="$PPRDIR/core/fifo_32x512/fifo_32x512.upgrade_log"/>
+    <File Path="$PPRDIR/ip-src/ip_loopback.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/2ports/xillybus_core.ngc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../multiports/2ports/xillybus_core.ngc"/>
+        <Attr Name="ImportTime" Val="1487831671"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/2ports/xillybus_core.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../multiports/2ports/xillybus_core.v"/>
+        <Attr Name="ImportTime" Val="1487831670"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/2ports/xillybus.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../multiports/2ports/xillybus.v"/>
+        <Attr Name="ImportTime" Val="1487831670"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="hcode_shell_top"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/constrain/hcode_shell.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/constrain/hcode_shell.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="fifo_128x512"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="pcie_k7_vivado"/>
+</GenRun>

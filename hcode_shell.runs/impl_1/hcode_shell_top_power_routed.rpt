@@ -1,0 +1,921 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2016.3 (lin64) Build 1682563 Mon Oct 10 19:07:26 MDT 2016
+| Date             : Thu Mar  9 15:48:04 2017
+| Host             : tea02 running 64-bit Ubuntu 14.04.5 LTS
+| Command          : report_power -file hcode_shell_top_power_routed.rpt -pb hcode_shell_top_power_summary_routed.pb -rpx hcode_shell_top_power_routed.rpx
+| Design           : hcode_shell_top
+| Device           : xc7vx485tffg1761-2
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+-------+
+| Total On-Chip Power (W)  | 3.035 |
+| Dynamic (W)              | 2.754 |
+| Device Static (W)        | 0.281 |
+| Effective TJA (C/W)      | 1.1   |
+| Max Ambient (C)          | 81.5  |
+| Junction Temperature (C) | 28.5  |
+| Confidence Level         | Low   |
+| Setting File             | ---   |
+| Simulation Activity File | ---   |
+| Design Nets Matched      | NA    |
++--------------------------+-------+
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.100 |       14 |       --- |             --- |
+| Slice Logic              |     0.028 |    18553 |       --- |             --- |
+|   LUT as Logic           |     0.023 |     6965 |    303600 |            2.29 |
+|   LUT as Distributed RAM |     0.002 |     1824 |    130800 |            1.39 |
+|   Register               |     0.002 |     8078 |    607200 |            1.33 |
+|   CARRY4                 |    <0.001 |      296 |     75900 |            0.39 |
+|   F7/F8 Muxes            |    <0.001 |      267 |    303600 |            0.09 |
+|   LUT as Shift Register  |    <0.001 |       60 |    130800 |            0.05 |
+|   Others                 |     0.000 |      514 |       --- |             --- |
+| Signals                  |     0.047 |    14836 |       --- |             --- |
+| Block RAM                |     0.085 |       27 |      1030 |            2.62 |
+| MMCM                     |     0.340 |        3 |        14 |           21.43 |
+| I/O                      |    <0.001 |        5 |       700 |            0.71 |
+| GTX                      |     2.108 |        8 |        28 |           28.57 |
+| Hard IPs                 |     0.045 |        1 |       --- |             --- |
+|   PCIE                   |     0.045 |        1 |         4 |           25.00 |
+| Static Power             |     0.281 |          |           |                 |
+| Total                    |     3.035 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.605 |       0.451 |      0.154 |
+| Vccaux    |       1.800 |     0.226 |       0.188 |      0.038 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.001 |       0.000 |      0.001 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.011 |       0.006 |      0.004 |
+| MGTAVcc   |       1.000 |     1.023 |       1.016 |      0.007 |
+| MGTAVtt   |       1.200 |     0.762 |       0.754 |      0.008 |
+| MGTVccaux |       1.800 |     0.021 |       0.021 |      0.000 |
+| MGTZVccl  |       1.075 |     0.000 |       0.000 |      0.000 |
+| MGTZAVcc  |       1.075 |     0.000 |       0.000 |      0.000 |
+| MGTZVcch  |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 1.1                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 2.2                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| Clock                                                                                                                                                  | Domain                                                                                                                              | Constraint (ns) |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+| clk_125mhz                                                                                                                                             | xillybus_interface_0/xillybus_ins/pipe_clock/pipe_clock/clk_125mhz                                                                  |             8.0 |
+| clk_250mhz                                                                                                                                             | xillybus_interface_0/xillybus_ins/pipe_clock/pipe_clock/clk_250mhz                                                                  |             4.0 |
+| clk_out4_clk_wiz_0                                                                                                                                     | clk_wiz_1/inst/clk_out4_clk_wiz_0                                                                                                   |             4.2 |
+| clk_out4_clk_wiz_0_1                                                                                                                                   | clk_wiz_2/inst/clk_out4_clk_wiz_0                                                                                                   |             4.2 |
+| clkfbout_clk_wiz_0                                                                                                                                     | clk_wiz_1/inst/clkfbout_clk_wiz_0                                                                                                   |            20.0 |
+| clkfbout_clk_wiz_0_1                                                                                                                                   | clk_wiz_2/inst/clkfbout_clk_wiz_0                                                                                                   |            20.0 |
+| mmcm_fb                                                                                                                                                | xillybus_interface_0/xillybus_ins/pipe_clock/pipe_clock/mmcm_fb                                                                     |            10.0 |
+| sys_clk                                                                                                                                                | xillybus_interface_0/xillybus_ins/pcie_ref_clk                                                                                      |            10.0 |
+| userclk1                                                                                                                                               | xillybus_interface_0/xillybus_ins/pipe_clock/pipe_clock/pipe_userclk1_in                                                            |             4.0 |
+| userclk1                                                                                                                                               | xillybus_interface_0/xillybus_ins/pipe_clock/pipe_clock/userclk1                                                                    |             4.0 |
+| xillybus_interface_0/xillybus_ins/pcie/pcie_k7_vivado/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i/TXOUTCLK | xillybus_interface_0/xillybus_ins/pcie/pcie_k7_vivado/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/pipe_txoutclk_out |            10.0 |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++--------------------------------------------------------------------------------------+-----------+
+| Name                                                                                 | Power (W) |
++--------------------------------------------------------------------------------------+-----------+
+| hcode_shell_top                                                                      |     2.754 |
+|   clk_wiz_1                                                                          |     0.117 |
+|     inst                                                                             |     0.117 |
+|   clk_wiz_2                                                                          |     0.117 |
+|     inst                                                                             |     0.117 |
+|   xillybus_interface_0                                                               |     2.519 |
+|     fifo_from_function_1                                                             |     0.009 |
+|       U0                                                                             |     0.009 |
+|         inst_fifo_gen                                                                |     0.009 |
+|           gconvfifo.rf                                                               |     0.009 |
+|             grf.rf                                                                   |     0.009 |
+|               gntv_or_sync_fifo.gcx.clkx                                             |     0.002 |
+|                 gsync_stage[1].rd_stg_inst                                           |    <0.001 |
+|                 gsync_stage[1].wr_stg_inst                                           |    <0.001 |
+|                 gsync_stage[2].rd_stg_inst                                           |    <0.001 |
+|                 gsync_stage[2].wr_stg_inst                                           |    <0.001 |
+|               gntv_or_sync_fifo.gl0.rd                                               |    <0.001 |
+|                 gras.rsts                                                            |    <0.001 |
+|                   c0                                                                 |    <0.001 |
+|                   c1                                                                 |    <0.001 |
+|                 rpntr                                                                |    <0.001 |
+|               gntv_or_sync_fifo.gl0.wr                                               |     0.001 |
+|                 gwas.wsts                                                            |    <0.001 |
+|                   c1                                                                 |    <0.001 |
+|                   c2                                                                 |    <0.001 |
+|                 wpntr                                                                |    <0.001 |
+|               gntv_or_sync_fifo.mem                                                  |     0.005 |
+|                 gbm.gbmg.gbmga.ngecc.bmg                                             |     0.005 |
+|                   inst_blk_mem_gen                                                   |     0.005 |
+|                     gnbram.gnativebmg.native_blk_mem_gen                             |     0.005 |
+|                       valid.cstr                                                     |     0.005 |
+|                         ramloop[0].ram.r                                             |     0.001 |
+|                           prim_noinit.ram                                            |     0.001 |
+|                         ramloop[1].ram.r                                             |     0.001 |
+|                           prim_noinit.ram                                            |     0.001 |
+|                         ramloop[2].ram.r                                             |     0.001 |
+|                           prim_noinit.ram                                            |     0.001 |
+|                         ramloop[3].ram.r                                             |     0.001 |
+|                           prim_noinit.ram                                            |     0.001 |
+|               rstblk                                                                 |    <0.001 |
+|     fifo_from_function_2                                                             |     0.011 |
+|       U0                                                                             |     0.011 |
+|         inst_fifo_gen                                                                |     0.011 |
+|           gconvfifo.rf                                                               |     0.011 |
+|             grf.rf                                                                   |     0.011 |
+|               gntv_or_sync_fifo.gcx.clkx                                             |     0.002 |
+|                 gsync_stage[1].rd_stg_inst                                           |    <0.001 |
+|                 gsync_stage[1].wr_stg_inst                                           |    <0.001 |
+|                 gsync_stage[2].rd_stg_inst                                           |    <0.001 |
+|                 gsync_stage[2].wr_stg_inst                                           |    <0.001 |
+|               gntv_or_sync_fifo.gl0.rd                                               |    <0.001 |
+|                 gras.rsts                                                            |    <0.001 |
+|                   c0                                                                 |    <0.001 |
+|                   c1                                                                 |    <0.001 |
+|                 rpntr                                                                |    <0.001 |
+|               gntv_or_sync_fifo.gl0.wr                                               |     0.001 |
+|                 gwas.wsts                                                            |    <0.001 |
+|                   c1                                                                 |    <0.001 |
+|                   c2                                                                 |    <0.001 |
+|                 wpntr                                                                |     0.001 |
+|               gntv_or_sync_fifo.mem                                                  |     0.007 |
+|                 gbm.gbmg.gbmga.ngecc.bmg                                             |     0.007 |
+|                   inst_blk_mem_gen                                                   |     0.007 |
+|                     gnbram.gnativebmg.native_blk_mem_gen                             |     0.007 |
+|                       valid.cstr                                                     |     0.007 |
+|                         ramloop[0].ram.r                                             |     0.002 |
+|                           prim_noinit.ram                                            |     0.002 |
+|                         ramloop[1].ram.r                                             |     0.002 |
+|                           prim_noinit.ram                                            |     0.002 |
+|                         ramloop[2].ram.r                                             |     0.002 |
+|                           prim_noinit.ram                                            |     0.002 |
+|                         ramloop[3].ram.r                                             |     0.002 |
+|                           prim_noinit.ram                                            |     0.002 |
+|               rstblk                                                                 |    <0.001 |
+|     fifo_to_function_1                                                               |     0.017 |
+|       U0                                                                             |     0.017 |
+|         inst_fifo_gen                                                                |     0.017 |
+|           gconvfifo.rf                                                               |     0.017 |
+|             grf.rf                                                                   |     0.017 |
+|               gntv_or_sync_fifo.gcx.clkx                                             |     0.002 |
+|                 gsync_stage[1].rd_stg_inst                                           |    <0.001 |
+|                 gsync_stage[1].wr_stg_inst                                           |    <0.001 |
+|                 gsync_stage[2].rd_stg_inst                                           |    <0.001 |
+|                 gsync_stage[2].wr_stg_inst                                           |    <0.001 |
+|               gntv_or_sync_fifo.gl0.rd                                               |    <0.001 |
+|                 gras.rsts                                                            |    <0.001 |
+|                   c0                                                                 |    <0.001 |
+|                   c1                                                                 |    <0.001 |
+|                 rpntr                                                                |    <0.001 |
+|               gntv_or_sync_fifo.gl0.wr                                               |    <0.001 |
+|                 gwas.wsts                                                            |    <0.001 |
+|                   c1                                                                 |    <0.001 |
+|                   c2                                                                 |    <0.001 |
+|                 wpntr                                                                |    <0.001 |
+|               gntv_or_sync_fifo.mem                                                  |     0.014 |
+|                 gbm.gbmg.gbmga.ngecc.bmg                                             |     0.014 |
+|                   inst_blk_mem_gen                                                   |     0.014 |
+|                     gnbram.gnativebmg.native_blk_mem_gen                             |     0.014 |
+|                       valid.cstr                                                     |     0.014 |
+|                         ramloop[0].ram.r                                             |     0.003 |
+|                           prim_noinit.ram                                            |     0.003 |
+|                         ramloop[1].ram.r                                             |     0.003 |
+|                           prim_noinit.ram                                            |     0.003 |
+|                         ramloop[2].ram.r                                             |     0.003 |
+|                           prim_noinit.ram                                            |     0.003 |
+|                         ramloop[3].ram.r                                             |     0.003 |
+|                           prim_noinit.ram                                            |     0.003 |
+|               rstblk                                                                 |    <0.001 |
+|     fifo_to_function_2                                                               |     0.018 |
+|       U0                                                                             |     0.018 |
+|         inst_fifo_gen                                                                |     0.018 |
+|           gconvfifo.rf                                                               |     0.018 |
+|             grf.rf                                                                   |     0.018 |
+|               gntv_or_sync_fifo.gcx.clkx                                             |     0.002 |
+|                 gsync_stage[1].rd_stg_inst                                           |    <0.001 |
+|                 gsync_stage[1].wr_stg_inst                                           |    <0.001 |
+|                 gsync_stage[2].rd_stg_inst                                           |    <0.001 |
+|                 gsync_stage[2].wr_stg_inst                                           |    <0.001 |
+|               gntv_or_sync_fifo.gl0.rd                                               |     0.001 |
+|                 gras.rsts                                                            |    <0.001 |
+|                   c0                                                                 |    <0.001 |
+|                   c1                                                                 |    <0.001 |
+|                 rpntr                                                                |     0.001 |
+|               gntv_or_sync_fifo.gl0.wr                                               |    <0.001 |
+|                 gwas.wsts                                                            |    <0.001 |
+|                   c1                                                                 |    <0.001 |
+|                   c2                                                                 |    <0.001 |
+|                 wpntr                                                                |    <0.001 |
+|               gntv_or_sync_fifo.mem                                                  |     0.014 |
+|                 gbm.gbmg.gbmga.ngecc.bmg                                             |     0.014 |
+|                   inst_blk_mem_gen                                                   |     0.014 |
+|                     gnbram.gnativebmg.native_blk_mem_gen                             |     0.014 |
+|                       valid.cstr                                                     |     0.014 |
+|                         ramloop[0].ram.r                                             |     0.003 |
+|                           prim_noinit.ram                                            |     0.003 |
+|                         ramloop[1].ram.r                                             |     0.003 |
+|                           prim_noinit.ram                                            |     0.003 |
+|                         ramloop[2].ram.r                                             |     0.003 |
+|                           prim_noinit.ram                                            |     0.003 |
+|                         ramloop[3].ram.r                                             |     0.003 |
+|                           prim_noinit.ram                                            |     0.003 |
+|               rstblk                                                                 |    <0.001 |
+|     xillybus_ins                                                                     |     2.461 |
+|       pcie                                                                           |     2.250 |
+|         pcie_k7_vivado                                                               |     2.250 |
+|           inst                                                                       |     2.250 |
+|             inst                                                                     |     2.250 |
+|               gt_top_i                                                               |     2.150 |
+|                 gt_rx_valid_filter[0].GT_RX_VALID_FILTER_7x_inst                     |    <0.001 |
+|                 gt_rx_valid_filter[1].GT_RX_VALID_FILTER_7x_inst                     |    <0.001 |
+|                 gt_rx_valid_filter[2].GT_RX_VALID_FILTER_7x_inst                     |    <0.001 |
+|                 gt_rx_valid_filter[3].GT_RX_VALID_FILTER_7x_inst                     |    <0.001 |
+|                 gt_rx_valid_filter[4].GT_RX_VALID_FILTER_7x_inst                     |    <0.001 |
+|                 gt_rx_valid_filter[5].GT_RX_VALID_FILTER_7x_inst                     |    <0.001 |
+|                 gt_rx_valid_filter[6].GT_RX_VALID_FILTER_7x_inst                     |    <0.001 |
+|                 gt_rx_valid_filter[7].GT_RX_VALID_FILTER_7x_inst                     |    <0.001 |
+|                 pipe_wrapper_i                                                       |     2.147 |
+|                   pipe_lane[0].gt_wrapper_i                                          |     0.264 |
+|                     cpllPDInst                                                       |    <0.001 |
+|                   pipe_lane[0].pipe_drp.pipe_drp_i                                   |     0.001 |
+|                   pipe_lane[0].pipe_eq.pipe_eq_i                                     |    <0.001 |
+|                     rxeq_scan_i                                                      |    <0.001 |
+|                   pipe_lane[0].pipe_quad.gt_common_enabled.gt_common_int.gt_common_i |    <0.001 |
+|                     qpll_drp_i                                                       |    <0.001 |
+|                     qpll_wrapper_i                                                   |    <0.001 |
+|                   pipe_lane[0].pipe_rate.pipe_rate_i                                 |     0.001 |
+|                   pipe_lane[0].pipe_sync_i                                           |    <0.001 |
+|                   pipe_lane[0].pipe_user_i                                           |    <0.001 |
+|                   pipe_lane[1].gt_wrapper_i                                          |     0.264 |
+|                     cpllPDInst                                                       |    <0.001 |
+|                   pipe_lane[1].pipe_drp.pipe_drp_i                                   |     0.001 |
+|                   pipe_lane[1].pipe_eq.pipe_eq_i                                     |    <0.001 |
+|                     rxeq_scan_i                                                      |    <0.001 |
+|                   pipe_lane[1].pipe_rate.pipe_rate_i                                 |     0.001 |
+|                   pipe_lane[1].pipe_sync_i                                           |    <0.001 |
+|                   pipe_lane[1].pipe_user_i                                           |    <0.001 |
+|                   pipe_lane[2].gt_wrapper_i                                          |     0.264 |
+|                     cpllPDInst                                                       |    <0.001 |
+|                   pipe_lane[2].pipe_drp.pipe_drp_i                                   |     0.001 |
+|                   pipe_lane[2].pipe_eq.pipe_eq_i                                     |    <0.001 |
+|                     rxeq_scan_i                                                      |    <0.001 |
+|                   pipe_lane[2].pipe_rate.pipe_rate_i                                 |     0.001 |
+|                   pipe_lane[2].pipe_sync_i                                           |    <0.001 |
+|                   pipe_lane[2].pipe_user_i                                           |    <0.001 |
+|                   pipe_lane[3].gt_wrapper_i                                          |     0.264 |
+|                     cpllPDInst                                                       |    <0.001 |
+|                   pipe_lane[3].pipe_drp.pipe_drp_i                                   |     0.001 |
+|                   pipe_lane[3].pipe_eq.pipe_eq_i                                     |    <0.001 |
+|                     rxeq_scan_i                                                      |    <0.001 |
+|                   pipe_lane[3].pipe_rate.pipe_rate_i                                 |     0.001 |
+|                   pipe_lane[3].pipe_sync_i                                           |    <0.001 |
+|                   pipe_lane[3].pipe_user_i                                           |    <0.001 |
+|                   pipe_lane[4].gt_wrapper_i                                          |     0.264 |
+|                     cpllPDInst                                                       |    <0.001 |
+|                   pipe_lane[4].pipe_drp.pipe_drp_i                                   |     0.001 |
+|                   pipe_lane[4].pipe_eq.pipe_eq_i                                     |    <0.001 |
+|                     rxeq_scan_i                                                      |    <0.001 |
+|                   pipe_lane[4].pipe_quad.gt_common_enabled.gt_common_int.gt_common_i |    <0.001 |
+|                     qpll_drp_i                                                       |    <0.001 |
+|                     qpll_wrapper_i                                                   |    <0.001 |
+|                   pipe_lane[4].pipe_rate.pipe_rate_i                                 |     0.001 |
+|                   pipe_lane[4].pipe_sync_i                                           |    <0.001 |
+|                   pipe_lane[4].pipe_user_i                                           |    <0.001 |
+|                   pipe_lane[5].gt_wrapper_i                                          |     0.264 |
+|                     cpllPDInst                                                       |    <0.001 |
+|                   pipe_lane[5].pipe_drp.pipe_drp_i                                   |     0.001 |
+|                   pipe_lane[5].pipe_eq.pipe_eq_i                                     |    <0.001 |
+|                     rxeq_scan_i                                                      |    <0.001 |
+|                   pipe_lane[5].pipe_rate.pipe_rate_i                                 |     0.001 |
+|                   pipe_lane[5].pipe_sync_i                                           |    <0.001 |
+|                   pipe_lane[5].pipe_user_i                                           |    <0.001 |
+|                   pipe_lane[6].gt_wrapper_i                                          |     0.264 |
+|                     cpllPDInst                                                       |    <0.001 |
+|                   pipe_lane[6].pipe_drp.pipe_drp_i                                   |     0.001 |
+|                   pipe_lane[6].pipe_eq.pipe_eq_i                                     |    <0.001 |
+|                     rxeq_scan_i                                                      |    <0.001 |
+|                   pipe_lane[6].pipe_rate.pipe_rate_i                                 |     0.001 |
+|                   pipe_lane[6].pipe_sync_i                                           |    <0.001 |
+|                   pipe_lane[6].pipe_user_i                                           |    <0.001 |
+|                   pipe_lane[7].gt_wrapper_i                                          |     0.264 |
+|                     cpllPDInst                                                       |    <0.001 |
+|                   pipe_lane[7].pipe_drp.pipe_drp_i                                   |     0.001 |
+|                   pipe_lane[7].pipe_eq.pipe_eq_i                                     |    <0.001 |
+|                     rxeq_scan_i                                                      |    <0.001 |
+|                   pipe_lane[7].pipe_rate.pipe_rate_i                                 |     0.001 |
+|                   pipe_lane[7].pipe_sync_i                                           |    <0.001 |
+|                   pipe_lane[7].pipe_user_i                                           |    <0.001 |
+|                   pipe_reset.pipe_reset_i                                            |     0.001 |
+|                   qpll_reset.qpll_reset_i                                            |    <0.001 |
+|               pcie_top_i                                                             |     0.100 |
+|                 axi_basic_top                                                        |     0.004 |
+|                   rx_inst                                                            |     0.003 |
+|                     rx_null_gen_inst                                                 |     0.001 |
+|                     rx_pipeline_inst                                                 |     0.001 |
+|                   tx_inst                                                            |     0.002 |
+|                     thrtl_ctl_enabled.tx_thrl_ctl_inst                               |    <0.001 |
+|                     tx_pipeline_inst                                                 |     0.001 |
+|                 pcie_7x_i                                                            |     0.090 |
+|                   pcie_bram_top                                                      |     0.042 |
+|                     pcie_brams_rx                                                    |     0.021 |
+|                       brams[0].ram                                                   |     0.005 |
+|                         use_tdp.ramb36                                               |     0.005 |
+|                       brams[1].ram                                                   |     0.005 |
+|                         use_tdp.ramb36                                               |     0.005 |
+|                       brams[2].ram                                                   |     0.005 |
+|                         use_tdp.ramb36                                               |     0.005 |
+|                       brams[3].ram                                                   |     0.005 |
+|                         use_tdp.ramb36                                               |     0.005 |
+|                     pcie_brams_tx                                                    |     0.021 |
+|                       brams[0].ram                                                   |     0.005 |
+|                         use_tdp.ramb36                                               |     0.005 |
+|                       brams[1].ram                                                   |     0.005 |
+|                         use_tdp.ramb36                                               |     0.005 |
+|                       brams[2].ram                                                   |     0.005 |
+|                         use_tdp.ramb36                                               |     0.005 |
+|                       brams[3].ram                                                   |     0.005 |
+|                         use_tdp.ramb36                                               |     0.005 |
+|                 pcie_pipe_pipeline_i                                                 |     0.005 |
+|                   pipe_2_lane.pipe_lane_1_i                                          |    <0.001 |
+|                   pipe_4_lane.pipe_lane_2_i                                          |    <0.001 |
+|                   pipe_4_lane.pipe_lane_3_i                                          |    <0.001 |
+|                   pipe_8_lane.pipe_lane_4_i                                          |    <0.001 |
+|                   pipe_8_lane.pipe_lane_5_i                                          |    <0.001 |
+|                   pipe_8_lane.pipe_lane_6_i                                          |    <0.001 |
+|                   pipe_8_lane.pipe_lane_7_i                                          |    <0.001 |
+|                   pipe_lane_0_i                                                      |    <0.001 |
+|                   pipe_misc_i                                                        |    <0.001 |
+|       pipe_clock                                                                     |     0.109 |
+|         pipe_clock                                                                   |     0.109 |
+|       xillybus_core_ins                                                              |     0.102 |
+|         messages_ins/ram_0/Mram_fifo_ram1                                            |    <0.001 |
+|         messages_ins/ram_0/Mram_fifo_ram2                                            |    <0.001 |
+|         messages_ins/ram_0/Mram_fifo_ram3                                            |    <0.001 |
+|         messages_ins/ram_0/Mram_fifo_ram4                                            |    <0.001 |
+|         messages_ins/ram_0/Mram_fifo_ram5                                            |    <0.001 |
+|         messages_ins/ram_0/Mram_fifo_ram61                                           |    <0.001 |
+|         messages_ins/ram_0/Mram_fifo_ram62                                           |    <0.001 |
+|         messages_ins/ram_1/Mram_fifo_ram1                                            |    <0.001 |
+|         messages_ins/ram_1/Mram_fifo_ram2                                            |    <0.001 |
+|         messages_ins/ram_1/Mram_fifo_ram3                                            |    <0.001 |
+|         messages_ins/ram_1/Mram_fifo_ram4                                            |    <0.001 |
+|         messages_ins/ram_1/Mram_fifo_ram5                                            |    <0.001 |
+|         messages_ins/ram_1/Mram_fifo_ram61                                           |    <0.001 |
+|         messages_ins/ram_1/Mram_fifo_ram62                                           |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address1                                       |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address10                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address100                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address101                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address102                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address103                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address104                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address105                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address106                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address107                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address108                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address109                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address11                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address110                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address111                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address112                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address113                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address114                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address115                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address116                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address117                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address118                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address119                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address12                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address120                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address121                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address122                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address123                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address124                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address125                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address126                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address127                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address128                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address129                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address13                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address130                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address131                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address132                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address133                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address134                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address135                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address136                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address137                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address138                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address139                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address14                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address140                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address141                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address142                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address143                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address144                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address145                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address146                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address147                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address148                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address149                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address15                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address150                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address151                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address152                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address153                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address154                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address155                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address156                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address157                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address158                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address159                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address16                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address160                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address161                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address162                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address163                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address164                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address165                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address166                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address167                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address168                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address169                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address17                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address170                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address171                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address172                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address173                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address174                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address175                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address176                                     |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address18                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address19                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address2                                       |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address20                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address21                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address22                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address23                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address24                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address25                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address26                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address27                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address28                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address29                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address3                                       |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address30                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address31                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address32                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address33                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address34                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address35                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address36                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address37                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address38                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address39                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address4                                       |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address40                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address41                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address42                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address43                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address44                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address45                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address46                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address47                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address48                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address49                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address5                                       |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address50                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address51                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address52                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address53                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address54                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address55                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address56                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address57                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address58                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address59                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address6                                       |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address60                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address61                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address62                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address63                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address64                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address65                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address66                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address67                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address68                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address69                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address7                                       |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address70                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address71                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address72                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address73                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address74                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address75                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address76                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address77                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address78                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address79                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address8                                       |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address80                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address81                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address82                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address83                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address84                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address85                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address86                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address87                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address88                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address89                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address9                                       |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address90                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address91                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address92                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address93                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address94                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address95                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address96                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address97                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address98                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_rd_dma_address99                                      |    <0.001 |
+|         pcie_recv_dma_ins/Mram_track_channel                                         |    <0.001 |
+|         unitr_2_ins/Mram_bufdone_bufno_segment1                                      |    <0.001 |
+|         unitr_2_ins/Mram_bufdone_bufno_segment2                                      |    <0.001 |
+|         unitr_2_ins/Mram_buffer_end_offset1                                          |    <0.001 |
+|         unitr_2_ins/Mram_buffer_end_offset10                                         |    <0.001 |
+|         unitr_2_ins/Mram_buffer_end_offset2                                          |    <0.001 |
+|         unitr_2_ins/Mram_buffer_end_offset3                                          |    <0.001 |
+|         unitr_2_ins/Mram_buffer_end_offset4                                          |    <0.001 |
+|         unitr_2_ins/Mram_buffer_end_offset5                                          |    <0.001 |
+|         unitr_2_ins/Mram_buffer_end_offset6                                          |    <0.001 |
+|         unitr_2_ins/Mram_buffer_end_offset7                                          |    <0.001 |
+|         unitr_2_ins/Mram_buffer_end_offset8                                          |    <0.001 |
+|         unitr_2_ins/Mram_buffer_end_offset9                                          |    <0.001 |
+|         unitr_2_ins/Mram_do_bufdone_segment                                          |    <0.001 |
+|         unitr_2_ins/Mram_elements_segment1                                           |    <0.001 |
+|         unitr_2_ins/Mram_elements_segment21                                          |    <0.001 |
+|         unitr_2_ins/Mram_elements_segment22                                          |    <0.001 |
+|         unitr_2_ins/Mram_rotate_segment                                              |    <0.001 |
+|         unitr_3_ins/Mram_bufdone_bufno_segment1                                      |    <0.001 |
+|         unitr_3_ins/Mram_bufdone_bufno_segment2                                      |    <0.001 |
+|         unitr_3_ins/Mram_buffer_end_offset1                                          |    <0.001 |
+|         unitr_3_ins/Mram_buffer_end_offset2                                          |    <0.001 |
+|         unitr_3_ins/Mram_elements_segment1                                           |    <0.001 |
+|         unitr_3_ins/Mram_elements_segment21                                          |    <0.001 |
+|         unitr_3_ins/Mram_elements_segment22                                          |    <0.001 |
+|         unitr_3_ins/Mram_endlsb_segment1                                             |    <0.001 |
+|         unitr_3_ins/Mram_endlsb_segment2                                             |    <0.001 |
+|         unitr_3_ins/Mram_rotate_segment                                              |    <0.001 |
+|         unitr_5_ins/Mram_bufdone_bufno_segment1                                      |    <0.001 |
+|         unitr_5_ins/Mram_bufdone_bufno_segment2                                      |    <0.001 |
+|         unitr_5_ins/Mram_buffer_end_offset1                                          |    <0.001 |
+|         unitr_5_ins/Mram_buffer_end_offset10                                         |    <0.001 |
+|         unitr_5_ins/Mram_buffer_end_offset2                                          |    <0.001 |
+|         unitr_5_ins/Mram_buffer_end_offset3                                          |    <0.001 |
+|         unitr_5_ins/Mram_buffer_end_offset4                                          |    <0.001 |
+|         unitr_5_ins/Mram_buffer_end_offset5                                          |    <0.001 |
+|         unitr_5_ins/Mram_buffer_end_offset6                                          |    <0.001 |
+|         unitr_5_ins/Mram_buffer_end_offset7                                          |    <0.001 |
+|         unitr_5_ins/Mram_buffer_end_offset8                                          |    <0.001 |
+|         unitr_5_ins/Mram_buffer_end_offset9                                          |    <0.001 |
+|         unitr_5_ins/Mram_do_bufdone_segment                                          |    <0.001 |
+|         unitr_5_ins/Mram_elements_segment1                                           |    <0.001 |
+|         unitr_5_ins/Mram_elements_segment21                                          |    <0.001 |
+|         unitr_5_ins/Mram_elements_segment22                                          |    <0.001 |
+|         unitr_5_ins/Mram_rotate_segment                                              |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram1                            |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram10                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram11                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram12                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram13                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram14                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram15                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram16                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram17                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram18                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram19                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram2                            |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram20                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram21                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram22                           |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram3                            |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram4                            |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram5                            |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram6                            |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram7                            |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram8                            |    <0.001 |
+|         unitw_1_ins/unitw_1_fifo_ins/ram_0/Mram_fifo_ram9                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_0/Mram_fifo_ram1                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_0/Mram_fifo_ram2                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_0/Mram_fifo_ram31                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_0/Mram_fifo_ram32                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_1/Mram_fifo_ram1                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_1/Mram_fifo_ram2                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_1/Mram_fifo_ram31                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_1/Mram_fifo_ram32                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_2/Mram_fifo_ram1                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_2/Mram_fifo_ram2                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_2/Mram_fifo_ram31                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_2/Mram_fifo_ram32                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_3/Mram_fifo_ram1                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_3/Mram_fifo_ram2                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_3/Mram_fifo_ram31                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_3/Mram_fifo_ram32                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_4/Mram_fifo_ram1                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_4/Mram_fifo_ram2                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_4/Mram_fifo_ram31                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_4/Mram_fifo_ram32                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_5/Mram_fifo_ram1                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_5/Mram_fifo_ram2                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_5/Mram_fifo_ram31                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_5/Mram_fifo_ram32                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_6/Mram_fifo_ram1                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_6/Mram_fifo_ram2                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_6/Mram_fifo_ram31                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_6/Mram_fifo_ram32                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_7/Mram_fifo_ram1                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_7/Mram_fifo_ram2                            |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_7/Mram_fifo_ram31                           |    <0.001 |
+|         unitw_3_ins/unitw_3_fifo_ins/ram_7/Mram_fifo_ram32                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram1                            |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram10                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram11                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram12                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram13                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram14                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram15                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram16                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram17                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram18                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram19                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram2                            |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram20                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram21                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram22                           |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram3                            |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram4                            |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram5                            |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram6                            |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram7                            |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram8                            |    <0.001 |
+|         unitw_4_ins/unitw_4_fifo_ins/ram_0/Mram_fifo_ram9                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address1                                             |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address10                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address100                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address101                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address102                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address103                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address104                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address105                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address106                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address107                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address108                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address109                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address11                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address110                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address111                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address112                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address113                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address114                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address115                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address116                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address117                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address118                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address119                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address12                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address120                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address121                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address122                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address123                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address124                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address125                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address126                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address127                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address128                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address129                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address13                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address130                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address131                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address132                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address133                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address134                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address135                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address136                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address137                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address138                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address139                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address14                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address140                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address141                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address142                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address143                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address144                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address145                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address146                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address147                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address148                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address149                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address15                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address150                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address151                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address152                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address153                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address154                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address155                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address156                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address157                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address158                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address159                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address16                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address160                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address161                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address162                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address163                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address164                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address165                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address166                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address167                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address168                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address169                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address17                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address170                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address171                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address172                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address173                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address174                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address175                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address176                                           |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address18                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address19                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address2                                             |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address20                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address21                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address22                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address23                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address24                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address25                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address26                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address27                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address28                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address29                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address3                                             |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address30                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address31                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address32                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address33                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address34                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address35                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address36                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address37                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address38                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address39                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address4                                             |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address40                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address41                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address42                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address43                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address44                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address45                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address46                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address47                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address48                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address49                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address5                                             |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address50                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address51                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address52                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address53                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address54                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address55                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address56                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address57                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address58                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address59                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address6                                             |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address60                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address61                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address62                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address63                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address64                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address65                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address66                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address67                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address68                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address69                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address7                                             |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address70                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address71                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address72                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address73                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address74                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address75                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address76                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address77                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address78                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address79                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address8                                             |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address80                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address81                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address82                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address83                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address84                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address85                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address86                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address87                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address88                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address89                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address9                                             |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address90                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address91                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address92                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address93                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address94                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address95                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address96                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address97                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address98                                            |    <0.001 |
+|         wr_arbiter_ins/Mram_dma_address99                                            |    <0.001 |
++--------------------------------------------------------------------------------------+-----------+
+
+
